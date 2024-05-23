@@ -76,12 +76,16 @@ function aplicarFiltros() {
     const filtroDistrito = document.getElementById("filtroDistrito").value.toLowerCase();
     const filtroSuperficieDesde = parseFloat(document.getElementById("filtroSuperficieDesde").value);
     const filtroSuperficieHasta = parseFloat(document.getElementById("filtroSuperficieHasta").value);
-    const filtroEstado = document.getElementById("filtroEstado").value.toLowerCase();
+
 
     // Validaciones
     if (!isNaN(filtroPrecioDesde) && !isNaN(filtroPrecioHasta) && filtroPrecioDesde > filtroPrecioHasta) {
         alert('Error: El precio desde no puede ser superior al precio hasta.');
         return;
+    }
+
+    if ((!isNaN(filtroPrecioDesde) && filtroPrecioDesde < 0) || (!isNaN(filtroPrecioHasta) && filtroPrecioHasta < 0)){
+        alert('Error: Los precios no pueden ser negativos');
     }
 
     if (!isNaN(filtroSuperficieDesde) && !isNaN(filtroSuperficieHasta) && filtroSuperficieDesde > filtroSuperficieHasta) {
@@ -110,8 +114,7 @@ function aplicarFiltros() {
         (isNaN(filtroPrecioHasta) || piso.precio <= filtroPrecioHasta) &&
         (filtroDistrito === '' || piso.distrito.toLowerCase().includes(filtroDistrito)) &&
         (isNaN(filtroSuperficieDesde) || piso.superficie >= filtroSuperficieDesde) &&
-        (isNaN(filtroSuperficieHasta) || piso.superficie <= filtroSuperficieHasta) &&
-        (filtroEstado === '' || piso.estado.toLowerCase().includes(filtroEstado))
+        (isNaN(filtroSuperficieHasta) || piso.superficie <= filtroSuperficieHasta)
     );
 
     generateHTMLForPisos(pisosFiltrados);
@@ -128,4 +131,9 @@ function verDetallePiso(index) {
 // Attach the generateHTMLForPisos function to the 'DOMContentLoaded' event
 document.addEventListener('DOMContentLoaded', () => {
     generateHTMLForPisos(pisos);
+
+    // Asociar evento click al botón "Aplicar Filtros"
+    const btnAplicarFiltros = document.getElementById('btnAplicarFiltros');
+    btnAplicarFiltros.addEventListener('click', aplicarFiltros);
 });
+
