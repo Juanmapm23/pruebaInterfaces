@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Málaga Dream Home</title>
+
+    <!--Icono pestaña del navegador-->
+    <link rel="icon" type="favicon2/png" href="./img/favicon2.png">
+
+    <!-- All CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <!--iconos bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!--select del bootstrap-->
+
+    <link rel="stylesheet" href="css/piso.css">
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand"> <span class="text-primary">Málaga</span>DreamHome</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
+                aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarS">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link " aria-current="page">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="calculadora.html" class="nav-link">Calculadora</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sobreNosotros.html" class="nav-link">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gestionaPropiedad.html" class="nav-link">Gestiona tu propiedad</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Detalles del Piso</h1>
+        <div id="detallePisoContainer">
+            <!-- Aquí se llenará la información del piso -->
+        </div>
+        
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="modalCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner" id="modalCarouselInner">
+                            <!-- Aquí se insertarán las imágenes del carrusel -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#modalCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#modalCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Intro Piso -->
+<div id="carouselContainer"></div>
+
+<!-- Texto debajo del carrusel -->
+<div>
+    <div id="masInfo"></div>
+    <!-- Este div se llenará con la información del piso seleccionado -->
+</div>
+
+
+    <!-- Script al final del body -->
+    <script>
+        function obtenerParametroURL(nombre) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(nombre);
+        }
+
+        // Obtener el ID del piso de la URL
+        const pisoId2 = obtenerParametroURL('pisoId');
+
+        // Obtener el objeto piso correspondiente al ID del localStorage
+        const pisoSeleccionado2 = JSON.parse(localStorage.getItem('pisos')).find(piso => piso.id === parseInt(pisoId2));
+        // Definimos el HTML de la tabla que queremos mostrar
+        var tablaHTML = `
+            <h4>${pisoSeleccionado2.descripcion}</h4>
+            <table class="tablaEstilizada">
+            <br>
+                <tbody>
+                    <tr>
+                        <td>Municipio: ${pisoSeleccionado2.municipio}</td>
+                        <td>Distrito: ${pisoSeleccionado2.distrito}</td>
+                    </tr>
+                    <tr>
+                        <td>Nº Habitaciones: ${pisoSeleccionado2.numHabitaciones}</td>
+                        <td>Nº Ba&ntildeos: ${pisoSeleccionado2.numBanos}</td>
+                    </tr>
+                    <tr>
+                        <td>Inmueble: ${pisoSeleccionado2.tipo}</td>
+                        <td>Estado: ${pisoSeleccionado2.estado}</td>
+                    </tr>
+                    <tr>
+                        <td>Precio: ${pisoSeleccionado2.precio+"€"}</td>
+                        <td>Operaci&oacuten: ${pisoSeleccionado2.operacion=="Ambos"?"Compra/Alquiler":pisoSeleccionado2.operacion}</td>
+                    </tr>
+                    <tr>
+                        <td>Superficie: ${pisoSeleccionado2.superficie}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        `;
+    
+        // Obtenemos el elemento en el que queremos mostrar la tabla
+        var elementoTablaMostrada = document.getElementById("masInfo");
+    
+        // Asignamos el HTML de la tabla al contenido del elemento
+        elementoTablaMostrada.innerHTML = tablaHTML;
+    </script>
+
+
+<div>
+    <div id="formulario"></div>
+    <!-- Este div se llenará con la información del piso seleccionado -->
+</div>
+
+<script>
+    // Definimos el HTML del formulario
+    var formularioHTML = `
+        <div class="row m-0">
+            <div class="col-md-12 p-0 pt-4 pb-4">
+                <h3>¿Quieres más información sobre este inmueble?</h3>
+                <form class="bg-dark p-4 m-auto" id="miFormulario">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Nombre (obligatorio)" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <input type="tel" class="form-control" placeholder="Teléfono (obligatorio)" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Correo (obligatorio)" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <textarea class="form-control" placeholder="Mensaje (obligatorio)" rows="3" required></textarea>
+                            </div>
+                        </div>
+                        <!--mt : margen del top -->
+                        <button class="btn btn-primary btn-lg btn-block mt-3" type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    `;
+
+    // Obtenemos el elemento donde queremos agregar el formulario
+    var elementoFormulario = document.getElementById("formulario");
+
+    // Asignamos el HTML del formulario al contenido del elemento
+    elementoFormulario.innerHTML = formularioHTML;
+
+    // Manejar el evento submit del formulario
+    document.getElementById("miFormulario").addEventListener("submit", function(event){
+        // Mostrar una alerta cuando se envíe el formulario
+        alert("Se ha registrado la solicitud");
+        location.reload();
+        event.preventDefault();
+    });
+</script>
+
+
+
+
+
+    
+    <script>
+        // Función para obtener parámetros de la URL
+        function obtenerParametroURL(nombre) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(nombre);
+        }
+
+        // Obtener el ID del piso de la URL
+        const pisoId = obtenerParametroURL('pisoId');
+
+        // Obtener el objeto piso correspondiente al ID del localStorage
+        const pisoSeleccionado = JSON.parse(localStorage.getItem('pisos')).find(piso => piso.id === parseInt(pisoId));
+
+        // Rellenar la información del piso en el HTML
+        const detallePisoContainer = document.getElementById("detallePisoContainer");
+        var precio = pisoSeleccionado.operacion === "Alquiler" ? pisoSeleccionado.precio +"€ /mes" : pisoSeleccionado.precio + "€";
+        detallePisoContainer.innerHTML = `
+        <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
+                <h2>${pisoSeleccionado.nombre}</h2>
+                <p>Precio: ${precio}</p>
+            </div>
+        `;
+    </script>
+
+    <script>
+        // JavaScript del carrusel
+        document.addEventListener("DOMContentLoaded", function () {
+            // Elemento contenedor del carrusel
+            var carouselContainer = document.getElementById("carouselContainer");
+
+            // Crear el elemento de carrusel
+            var carousel = document.createElement("div");
+            carousel.classList.add("carousel", "slide");
+            carousel.setAttribute("id", "carouselE");
+            carousel.setAttribute("data-bs-ride", "carousel");
+
+            // Crear indicadores
+            var indicators = document.createElement("div");
+            indicators.classList.add("carousel-indicators");
+            indicators.innerHTML = `
+                <button type="button" data-bs-target="#carouselE" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselE" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselE" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselE" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselE" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselE" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            `;
+
+            // Crear items del carrusel
+            var carouselInner = document.createElement("div");
+            carouselInner.classList.add("carousel-inner");
+
+            var src = "img/Casas/Piso" + pisoId + "/";
+            var images = [
+                src + "1.jpg", src + "2.jpg", src + "3.jpg", src + "4.jpg", src + "5.jpg", src + "6.jpg"
+            ];
+
+            images.forEach(function (imageSrc, index) {
+                var item = document.createElement("div");
+                item.classList.add("carousel-item");
+                if (index === 0) {
+                    item.classList.add("active");
+                }
+                item.innerHTML = `
+                    <img src="${imageSrc}" class="d-block w-100 carousel-image" alt="Slide ${index + 1}">
+                    <div class="carousel-caption">
+                    </div>
+                `;
+                carouselInner.appendChild(item);
+            });
+
+            // Botones de control
+            var prevButton = document.createElement("button");
+            prevButton.classList.add("carousel-control-prev");
+            prevButton.setAttribute("type", "button");
+            prevButton.setAttribute("data-bs-target", "#carouselE");
+            prevButton.setAttribute("data-bs-slide", "prev");
+            prevButton.innerHTML = `
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            `;
+
+            var nextButton = document.createElement("button");
+            nextButton.classList.add("carousel-control-next");
+            nextButton.setAttribute("type", "button");
+            nextButton.setAttribute("data-bs-target", "#carouselE");
+            nextButton.setAttribute("data-bs-slide", "next");
+            nextButton.innerHTML = `
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            `;
+
+            // Agregar elementos al carrusel
+            carousel.appendChild(indicators);
+            carousel.appendChild(carouselInner);
+            carousel.appendChild(prevButton);
+            carousel.appendChild(nextButton);
+
+            // Agregar carrusel al contenedor
+            carouselContainer.appendChild(carousel);
+
+            // Inicializar el carrusel
+            var myCarousel = new bootstrap.Carousel(document.getElementById('carouselE'), {
+                interval: 2000 // Intervalo entre transiciones (en milisegundos)
+            });
+
+            // Añadir evento de clic a las imágenes del carrusel
+            document.querySelectorAll('.carousel-image').forEach(function (image, index) {
+                image.addEventListener('click', function () {
+                    var modalCarouselInner = document.getElementById("modalCarouselInner");
+                    modalCarouselInner.innerHTML = ''; // Limpiar el contenido del carrusel del modal
+
+                    images.forEach(function (imgSrc, idx) {
+                        var modalItem = document.createElement("div");
+                        modalItem.classList.add("carousel-item");
+                        if (idx === index) {
+                            modalItem.classList.add("active");
+                        }
+                        modalItem.innerHTML = `
+                            <img src="${imgSrc}" class="d-block w-100" alt="Slide ${idx + 1}">
+                        `;
+                        modalCarouselInner.appendChild(modalItem);
+                    });
+
+                    var imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+                    imageModal.show();
+                });
+            });
+        });
+    </script>
+<!--Información del piso -->
+
+
+    
+    <!---------------------------------------------------------------------------------->
+    <!--------------------------------FOOTER-------------------------------------------------->
+
+    <footer class="pie-pagina pie-pagina-dark bg-dark mt-5">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="img/logo_footer.png" alt="logo en el que se ve una casa ">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <p class="mt-4 mb-5"><i class="bi bi-geo-fill"></i>Calle Blvr. Louis Pasteur,35 <br> <i
+                        class="bi bi-phone-fill"></i> 952 13 28 42 <br><i class="bi bi-envelope-fill"></i>
+                    malagadreamhome@gmail.es</p>
+            </div>
+
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="redes-social">
+                    <a href="https://www.twitter.com" target="_blank" class="bi bi-twitter"></a>
+                    <a href="https://www.facebook.com" target="_blank" class="bi bi-facebook"></a>
+                    <a href="https://www.instagram.com" target="_blank" class="bi bi-instagram"></a>
+                    <a href="https://www.linkedin.com" target="_blank" class="bi bi-linkedin"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grupo-2">
+            <small>
+                &copy;2024 <b>Malaga Dream Home</b> - Todos los derechos reservados -
+            </small>
+        </div>
+    </footer>
+
+    <!---------------------------------------------------------------------------------->
+    <!---------------------------------------------------------------------------------->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+</body>
+
+</html>

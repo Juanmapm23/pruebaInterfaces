@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Málaga Dream Home</title>
+
+    <!--Icono pestaña del navegador-->
+    <link rel="icon" type="favicon2/png" href="./img/favicon2.png">
+
+    <!-- All CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <!--iconos bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!--select del bootstrap-->
+
+    <link rel="stylesheet" href="css/calculadora.css">
+
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+        <div class="container">
+            <a href="index.html" class="navbar-brand"> <span class="text-primary">Málaga</span>DreamHome</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
+                aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarS">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Inicio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active" aria-current="page">Calcula tu hipoteca</a>
+                    </li>
+
+                   <li class="nav-item">
+                        <a href="sobreNosotros.html" class="nav-link">Sobre Nosotros</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="gestionaPropiedad.html" class="nav-link">Gestiona tu propiedad</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <section class="about section-padding text-center"> <!-- Añadida la clase text-center -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 col-12 mx-auto mt-5"> <!-- Cambiado ps-lg-5 a mx-auto -->
+                    <div class="about-text text-white mt-5">
+                        <h2>Calculadora de hipoteca</h2>
+                        <p>Con nuestra calculadora de hipoteca podrás realizar una estimación del coste mensual de comprar un inmueble con hipoteca. Te permitirá saber si te es rentable y accesible para comenzar con el proceso de solicitud de hipoteca de tu próximo inmueble.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section class="calculator section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Columna de la calculadora -->
+                <div class="col-lg-6 col-md-12 col-12 px-lg-4"> <!-- Añadida clase px-lg-4 -->
+                    <div class="about-text text-white">
+                        <h2>Calculadora de Hipoteca</h2>
+                        <form id="hipoteca-form">
+                            <div class="mb-3">
+                                <label for="amount" class="form-label">Valor hipotecario en euros</label>
+                                <input type="number" class="form-control form-control-sm input-short" id="value" placeholder="Introduce el valor hipotecario (OBLIGATORIO)" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="amount" class="form-label">Ahorro aportado en euros</label>
+                                <input type="number" class="form-control form-control-sm input-short" id="savings" placeholder="Introduce el ahorro aportado (OBLIGATORIO)" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="years" class="form-label">Plazo en años</label>
+                                <input type="number" class="form-control form-control-sm input-short" id="years" placeholder="Introduce el plazo en años (OBLIGATORIO)" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="amount" class="form-label">Interés en porcentaje</label>
+                                <input type="number" class="form-control form-control-sm input-short" id="interest" placeholder="Introduce el interés (OBLIGATORIO)" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Calcular</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Columna del resultado de la hipoteca -->
+                <div class="col-lg-6 col-md-12 col-12 mt-5 px-lg-4"> <!-- Añadida clase px-lg-4 -->
+                    <div id="resultado-hipoteca" class="text-white"></div>
+                    <div id="cuota-mensual" class="text-white"></div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="services section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4 mt-5"> <!-- Modificado col-md-6 col-lg-3 -->
+                    <div class="card text-white text-center bg-dark pb-2">
+                        <div class="card-body">
+                            <i class="bi bi-house-door-fill"></i>
+                            <h3 class="card-title">Valor hipotecario</h3>
+                            <p class="lead"> Es el precio estimado por una empresa acreditada mediante una tasación. Este precio se fija y será la cantidad máxima que el banco prestará para la operación. Este precio puede ser mayor o menor que el valor de venta, ya que el valor hipotecario ha de ser un valor objetivo y sin especulaciones.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4 mt-5"> <!-- Modificado col-md-6 col-lg-3 -->
+                    <div class="card text-white text-center bg-dark pb-2">
+                        <div class="card-body">
+                            <i class="bi bi-cash-coin"></i>
+                            <h3 class="card-title">Ahorro aportado</h3>
+                            <p class="lead">Es la cantidad de dinero que tú como comprador de la vivienda deberás de aportar antes de que se te conceda un préstamo bancario para la hipoteca. Está fijado que, como mínimo, deberás aportar el <b>20%</b> del valor hipotecario del inmueble. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4 mt-5"> <!-- Modificado col-md-6 col-lg-3 -->
+                    <div class="card text-white text-center bg-dark pb-2">
+                        <div class="card-body">
+                            <i class="bi bi-calendar2-check-fill"></i>
+                            <h3 class="card-title">Plazo en años</h3>
+                            <p class="lead">Es el número de años fijado para pagar el coste total de la hipoteca, de donde se calcularán el número de cuotas mensuales que se deberán pagar en total y el precio en cada una de estas cuotas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4 mt-5"> <!-- Modificado col-md-6 col-lg-3 -->
+                    <div class="card text-white text-center bg-dark pb-2">
+                        <div class="card-body">
+                            <i class="bi bi-graph-up-arrow"></i>
+                            <h3 class="card-title">Tipo de interés</h3>
+                            <p class="lead">El interés es la cantidad a pagar adicionalmente cada mes como remuneración de la concesión de un préstamo. Este interés puede ser:
+                                <ul class="lead">
+                                    <li>
+                                        fijo: el interés se mantiene igual durante el plazo de la hipoteca.
+                                    </li>
+                                    <li>
+                                        variable: el interés varía dependiendo de la suma de un índice (suele ser el Euríbor) y un porcentaje constante marcado por el banco.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+ <!---------------------------------------------------------------------------------->
+    <!--------------------------------FOOTER-------------------------------------------------->
+
+    <footer class="pie-pagina pie-pagina-dark bg-dark mt-5">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="img/logo_footer.png" alt="logo en el que se ve una casa ">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <p class="mt-4 mb-5"><i class="bi bi-geo-fill"></i>Calle Blvr. Louis Pasteur,35 <br> <i
+                        class="bi bi-phone-fill"></i> 952 13 28 42 <br><i class="bi bi-envelope-fill"></i>
+                    malagadreamhome@gmail.es</p>
+            </div>
+
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="redes-social">
+                    <a href="https://www.twitter.com" target="_blank" class="bi bi-twitter"></a>
+                    <a href="https://www.facebook.com" target="_blank" class="bi bi-facebook"></a>
+                    <a href="https://www.instagram.com" target="_blank" class="bi bi-instagram"></a>
+                    <a href="https://www.linkedin.com" target="_blank" class="bi bi-linkedin"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grupo-2">
+            <small>
+                &copy;2024 <b>Malaga Dream Home</b> - Todos los derechos reservados -
+            </small>
+        </div>
+    </footer>
+
+    <!---------------------------------------------------------------------------------->
+    <!---------------------------------------------------------------------------------->
+
+
+    <!-- All Js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="js/calculadora.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+@import url("estilosComunes.css");
+
+.section-padding {
+    padding: 70px 0;
+}
+
+.carousel-item {
+    height: 80vh; /*ajuste de la pantalla*/
+    min-height: 300px;
+}
+
+.carousel-item img {
+    object-fit: cover; 
+    height: 100%;
+    width: 100%;
+} 
+
+
+/*para el texto del carrusel*/
+.carousel-caption {
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+}
+.carousel-caption h5 {
+    font-size: 35px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/*Para añadirle como un filtro a las fotos para q se vea mejor y mas oscuro*/
+.carousel-inner::before { 
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,30,82,0.327);
+    z-index: 1;
+}
+
+/*BUSCADOR*/
+.filtro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12vh;
+}
+
+label{
+    color: white;
+}
+.w-100 {
+    height: 100vh;
+}
+
+
+.services .card-body i {
+    font-size: 50px;
+}
+
+button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: darkblue;
+  }
+.team .card-body i {
+    font-size: 20px;
+}
+.card .img-area img {
+    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: 200px; /* Establece una altura fija para todas las imágenes */
+    object-fit: cover; /* Hace que la imagen cubra el área designada */
+}
+
+.small-input {
+    width: 100px; /* Adjust the width as needed */
+    padding: 5px;
+    margin: 5px;
+    font-size: 14px; /* Adjust font size as needed */
+}
+
+/* Estilos para el contenedor del filtro */
+.filtro-container {
+    background-color: rgba(44, 42, 42, 0.327);
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.filtro-precio{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.label-precio{
+    align-items: end;
+}
+
+#guion{
+    padding-left: 10px;
+}
+
+/* Estilos para el contenido del filtro */
+.filtro-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filtro-content > div {
+    flex: 1 1 30%;
+}
+
+/* Estilos para las etiquetas del filtro */
+.filtro-content label {
+    margin-bottom: 5px;
+}
+
+/* Estilos para los campos de entrada y select del filtro */
+.filtro-content input[type="text"],
+.filtro-content input[type="number"],
+.filtro-content select {
+    width: calc(100% - 10px); /* Resta 10px para compensar el gap entre elementos */
+}
+
+/* Estilos para el botón del filtro */
+.filtro-content button {
+    width: 100%;
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filtro-content button:hover {
+    background-color: darkblue;
+}
+
+.filtro-precio {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+
+
+
+
+/*el media sirve para conjunto de estilos que se aplicarán 
+cuando el ancho de la pantalla sea de 767 píxeles o menos. 
+Es común utilizar este tipo de consultas para hacer que un sitio 
+web sea más receptivo y se adapte a diferentes tamaños de pantalla, 
+como los de dispositivos móviles.*/
+@media(max-width: 767px) {
+
+    .carousel-item {
+        height: 70vh;
+    }
+
+    .w-100 {
+        height: 70vh;
+    }
+
+    .carousel-caption {
+        bottom: 125px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 17px;
+    }
+
+    .carousel-caption a {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+
+    .about-text {
+        padding-top: 50px;
+    }
+
+    .card {
+        margin-bottom: 30px;
+    }
+
+    .section-padding {
+        padding: 50px 0;
+    }
+
+   
+}

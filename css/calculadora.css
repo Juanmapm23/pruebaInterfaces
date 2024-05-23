@@ -1,0 +1,18 @@
+@import url("estilosComunes.css");
+
+    #tipofv {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #text-calc {
+        margin-top: 100px;
+    }
+
+    .input-short {
+        max-width: 320px; /* Puedes ajustar el valor según tus necesidades */
+    }
+    
+    
+
+

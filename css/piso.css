@@ -1,0 +1,70 @@
+@import url("estilosComunes.css");
+
+.section-padding {
+    padding: 70px 0;
+}
+
+
+.carousel-item img {
+    object-fit: cover; 
+    height: 75%;
+    width: 75%;
+} 
+
+.carousel-caption {
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.carousel-caption h5 {
+    font-size: 35px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Añade este estilo en tu archivo piso.css */
+h2 {
+    color: white;
+}
+h3 {
+    color: white;
+}
+h4 {
+    color: white;
+}
+p {
+    color: white;
+}
+td {
+    color: white;
+}
+.texto-carousel {
+    position: relative; /* Establece la posición relativa para que podamos usar top */
+    text-align: center; /* Alinea el texto al centro */
+    top: 20px; /* Ajusta la posición vertical del texto */
+}
+.tablaEstilizada {
+    border-collapse: collapse; /* Colapsamos los bordes de la tabla */
+    width: 100%; /* Ancho de la tabla */
+}
+
+.tablaEstilizada th, .tablaEstilizada td {
+    padding: 8px; /* Espaciado interno */
+    text-align: left; /* Alineación del texto */
+}
+
+/* Añadimos margen entre las celdas */
+.tablaEstilizada td + td {
+    margin-left: 10px; /* Ajusta el valor según lo que necesites */
+}
+
+.tablaEstilizada th {
+    background-color: #f2f2f2; /* Color de fondo de las celdas del encabezado */
+}
+
+
+
+
