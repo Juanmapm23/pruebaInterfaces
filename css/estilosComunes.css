@@ -18,11 +18,6 @@ body {
     letter-spacing: 2px;
 }
 
-/*no entiendo pa q sirve no cambia na aparentemente*/
-.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
-    color: black;
-}
-
 /*En la nav de manera responsiva el recuadro*/
 .navbar-toggler {
     padding: 1px 5px;

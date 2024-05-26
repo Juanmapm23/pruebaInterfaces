@@ -63,17 +63,7 @@ label{
     font-size: 50px;
 }
 
-button {
-    background-color: blue;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  button:hover {
-    background-color: darkblue;
-  }
+ 
 .team .card-body i {
     font-size: 20px;
 }
@@ -156,10 +146,6 @@ button {
 }
 
 
-
-
-
-
 /*el media sirve para conjunto de estilos que se aplicarán 
 cuando el ancho de la pantalla sea de 767 píxeles o menos. 
 Es común utilizar este tipo de consultas para hacer que un sitio 
@@ -175,12 +161,9 @@ como los de dispositivos móviles.*/
         height: 70vh;
     }
 
-    .carousel-caption {
-        bottom: 125px;
-    }
-
     .carousel-caption h5 {
         font-size: 17px;
+        padding-top: 3vh;
     }
 
     .carousel-caption a {
@@ -201,4 +184,45 @@ como los de dispositivos móviles.*/
     }
 
    
+    .filtro-content {
+        flex-direction: column;
+    }
+
+    .filtro-content > div {
+        flex: 1 1 100%;
+    }
+
+    .small-input {
+        width: calc(50% - 10px); 
+    }
+
+    .filtro-precio,
+    .filtro-superficie {
+        flex-direction: row; 
+    }
+
+    .filtro-precio input,
+    .filtro-superficie input {
+        width: calc(45% - 5px); 
+    }
+
+    .filtro-precio label,
+    .filtro-superficie label {
+        width: auto; 
+    }
+
+    .filtrotipo {
+        width: 30vh;
+    }
+
+    .filtroop, .filtroestado, .filtrohab, .filtrobanos {
+        width: 25vh;
+    }
+
+    .filtromuni, .filtrodistrito{
+        width: 50vh;
+    }
 }
+
+
+

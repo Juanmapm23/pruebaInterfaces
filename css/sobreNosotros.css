@@ -1,10 +1,6 @@
 @import url("estilosComunes.css");
 
-/*PREGUNTAS FRECUENTES*/
-
-/*SOLUCIONARRRRRRR NO SE ESCONDE LA RESPUESTA COÑO*/
-
-
+/* PREGUNTAS FRECUENTES */
 .questions {
     text-align: center;
     color: white;
@@ -20,20 +16,19 @@
 
 .questions__padding { 
     padding: 0;
-    transition: padding .3s;
+    transition: padding 0.3s;
     border: 1px solid white;
     border-radius: 6px;
-    height: 15vh;
 }
 
-/*modificador, se agrega dinamicamente*/
+/* Modificador, se agrega dinámicamente */
 .questions__padding--add {
-    padding-bottom: 30px;
+    padding-bottom: 0; /* Ajustado a 0 para que solo se expanda con la respuesta */
 }
 
 .questions__title {
     display: flex;
-    padding: 30px 0 30px;
+    padding: 10px 30px; /* Reducido el padding */
     font-size: 20px;
     cursor: pointer;
     justify-content: space-between;
@@ -41,6 +36,7 @@
 
 .questions__answer {
     padding: 0 30px 30px;
+    overflow: hidden;
 }
 
 .questions__arrow {
@@ -51,9 +47,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    align-self: flex-end; /*manda la flecha al final*/
+    align-self: center; /* Centrar la flecha verticalmente */
     margin-left: 10px;
-    transition: transform .3s;
+    transition: transform 0.3s;
 }
 
 .questions__arrow--rotate {
@@ -61,14 +57,50 @@
 }
 
 .questions__show {
-    text-align: left;
     height: 0;
-    transition: height .3s;
-    visibility: hidden;
-
+    overflow: hidden;
+    transition: height 0.3s ease;
+    display: none;
+    text-align: justify;
 }
+
+/* Alineación del texto del párrafo dentro del contenedor de preguntas frecuentes */
+.questions__container p {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.questions__container ul{
+    text-align: left;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
 
 .questions__i {
     display: block;
     color: black;
 }
+
+
+/* integrantes del grupo */
+.perfil {
+    width: 200px;
+    height: 200px;
+}
+
+.socials a {
+    color: white; /* Establece el color blanco por defecto */
+    transition: color 0.3s; 
+}
+.socials a:hover {
+    color: cornflowerblue;
+}
+
+
+
+
+

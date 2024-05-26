@@ -10,8 +10,56 @@
     }
 
     .input-short {
-        max-width: 320px; /* Puedes ajustar el valor según tus necesidades */
+        max-width: 320px;
     }
+
+    .card {
+        background-color: #343a40; /* Color de fondo */
+        border-radius: 10px; /* Radio de borde */
+        box-shadow: 0px 4px 7px rgb(60, 93, 154);/* Sombra */
+        transition: transform 0.3s ease; /* Transición */
+        margin-bottom: -5vh;
+    }
+    
+    .card:hover {
+        transform: translateY(-10px); /* Efecto al pasar el mouse */
+    }
+
+
+/*PARA LAS VENTANAS FLOTANTES*/
+    /* Estilo del modal */
+.modal {
+    display: none; /* Por defecto, ocultar el modal */
+    position: fixed; /* Permite que el modal flote sobre el contenido */
+    z-index: 1; /* Poner el modal por encima del contenido */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro semitransparente */
+}
+
+/* Estilo del contenido del modal */
+.modal-content {
+    background-color: #fefefe; /* Fondo blanco */
+    margin: 15% auto; /* Margen superior e inferior y centrar horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del contenido del modal */
+}
+
+/* Estilo del botón de cierre (×) */
+.close {
+    color: #ff0000;
+    float: right; /* Alinear a la derecha */
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer; /* Cambiar el cursor a puntero para indicar que es interactivo */
+}
+
+
+
+
     
     
 

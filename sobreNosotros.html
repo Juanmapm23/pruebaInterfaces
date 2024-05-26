@@ -8,68 +8,55 @@
 
     <title>Málaga Dream Home</title>
 
-    <!--Icono pestaña del navegador-->
+    <!-- Icono pestaña del navegador -->
     <link rel="icon" type="favicon2/png" href="./img/favicon2.png">
 
     <!-- All CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <!--iconos bootstrap-->
+    <!-- iconos bootstrap -->
     <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-    <!--select del bootstrap-->
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!-- select del bootstrap -->
 
     <link rel="stylesheet" href="css/sobreNosotros.css">
 
 </head>
 
 <body>
-
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-
         <div class="container">
-            <a href="index.html" class="navbar-brand"> <span class="text-primary">Málaga</span>DreamHome</a>
-
+            <a href="#" class="navbar-brand"> <span class="text-primary">Málaga</span>DreamHome</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
-                    aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarS">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a href="index.html" class="nav-link">Inicio</a>
                     </li>
-
                     <li class="nav-item">
                         <a href="calculadora.html" class="nav-link">Calcula tu hipoteca</a>
                     </li>
-
                     <li class="nav-item">
                         <a href="#" class="nav-link active" aria-current="page">Sobre Nosotros</a>
                     </li>
-
                     <li class="nav-item">
                         <a href="gestionaPropiedad.html" class="nav-link">Gestiona tu propiedad</a>
                     </li>
                 </ul>
             </div>
-
-
         </div>
-
     </nav>
 
-    <!---------------------------------------------------------------------------------->
-    <!-----------------------------------PREGUNTAS FRECUENTES----------------------------------------------->
-
+    <!-- PREGUNTAS FRECUENTES -->
     <section class="questions container">
         <h2 class="subtitle">Preguntas frecuentes</h2>
         <p class="questions_paragraph">
-            A continuación se ofrece un listado de preguntas comunes que suelen hacer nuestros usuarios acerca de las
-            diferentes posibilidades que ofrecidos, para daros un servicio eficiente y sencillo.
+            A continuación se muestra un listado de preguntas comunes que suelen hacer nuestros usuarios acerca de las
+            diferentes posibilidades que ofrecemos, para dar un servicio eficiente y sencillo.
         </p>
         <section class="questions__container">
             <article class="questions__padding">
@@ -80,16 +67,37 @@
                             <i class="questions__i bi bi-arrow-up-short"></i>
                         </span>
                     </h3>
-                    <p class="questions__show" id="paparrucha">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Sequi vel vero
-                        consequatur, praesentium natus perferendis tenetur ratione doloribus assumenda, inventore harum
-                        tempore maxime? Quaerat cupiditate maxime nulla reiciendis perferendis et!
-                    </p>
+                    <div class="questions__show">
+                            <ul>
+                                <li>Si quiere información adicional acerca de un inmueble, dentro del mismo encontrará un formulario de consulta; tras rellenarlo,
+                                    uno de nuestros miembros se pondrá en contacto con usted.</li>
+                                <li>Si desea poner en venta o alquiler su propiedad, en el apartado<b> "Gestiona tu propiedad"</b> podrá rellenar un formulario 
+                                    con sus datos de contacto, y de igual manera, uno de nuestros agentes se pondrá en contacto con usted para comenzar la gestión de su propiedad.</li>
+                                <li>Si tiene alguna duda o consulta referente a otros temas, podrá ponerse en contacto con nosotros a través del correo electrónico o el 
+                                    número de teléfono que aparecen en el pie de página.</li>
+                            </ul> 
+                    </div>
                 </div>
             </article>
 
-            <article class="questions__padding" id="kk">
+            <article class="questions__padding">
+                <div class="questions__answer">
+                    <h3 class="questions__title">
+                        ¿Cómo busco inmuebles?
+                        <span class="questions__arrow">
+                            <i class="questions__i bi bi-arrow-up-short"></i>
+                        </span>
+                    </h3>
+                    <div class="questions__show">
+                        <p>
+                            En la página <b>"Inicio"</b> podrá encontrar un listado con los inmuebles disponibles. Si desea filtrar la búsqueda para encontrar
+                            un tipo de inmueble más específico, podrá hacerlo a través de la barra de búsqueda, donde hay varios filtros y categorías para seleccionar. 
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="questions__padding">
                 <div class="questions__answer">
                     <h3 class="questions__title">
                         ¿Cómo calculo mi hipoteca?
@@ -97,113 +105,116 @@
                             <i class="questions__i bi bi-arrow-up-short"></i>
                         </span>
                     </h3>
-                    <p class="questions__show">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi vel vero
-                        consequatur, praesentium natus perferendis tenetur ratione doloribus assumenda, inventore harum
-                        tempore maxime? Quaerat cupiditate maxime nulla reiciendis perferendis et!
-                    </p>
-                </div>
-            </article>
-
-            <article class="questions__padding">
-                <div class="questions__answer">
-                    <h3 class="questions__title">
-                        ¿Cómo busco casas?
-                        <span class="questions__arrow">
-                            <i class="questions__i bi bi-arrow-up-short"></i>
-                        </span>
-                    </h3>
-                    <p class="questions__show">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi vel vero
-                        consequatur, praesentium natus perferendis tenetur ratione doloribus assumenda, inventore harum
-                        tempore maxime? Quaerat cupiditate maxime nulla reiciendis perferendis et!
-                    </p>
+                    <div class="questions__show">
+                        <p>
+                            En la sección <b>"Calculadora de hipoteca"</b> ofrecemos una herramienta que le permitirá simular la cuota mensual de su hipoteca. Tan solo deberá
+                            introducir los datos que se le solicitan y la calculadora le mostrará el resultado. Los campos que se requieren vienen explicados en la misma 
+                            sección.
+                        </p>
+                    </div>
                 </div>
             </article>
         </section>
     </section>
 
-
-
-
-    <!---------------------------------------------------------------------------------->
-    <!-----------------------------------CONTACTO----------------------------------------------->
-
-    <section class="contact section-padding">
-        <div class="container mt-5 mb-5">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-header text-center text-white pb-5">
-                        <h2>Contacto</h2>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum natus possimus quos
-                            quibusdam illum deleniti voluptas atque quia molestias <br>cumque minima eos ullam, aliquid
-                            fugit ducimus voluptates, rerum, in nemo?
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row m-0">
-                <div class="col-md-12 p-0 pt-4 pb-4">
-                    <form action="#" class="bg-dark p-4 m-auto">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <input type="text" class="fore-control" placeholder="Nombre" required>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <input type="tel" class="fore-control" placeholder="Telefono" required>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <textarea class="form-control" placeholder="Mensaje" rows="3" required></textarea>
-                                </div>
-                            </div>
-                            <!--mt : margen del top -->
-                            <button class="btn btn-primary btn-lg btn-blovk mt-3" type="submit">Enviar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!---------------------------------------------------------------------------------->
-    <!---------------------------------------INTEGRANTES DEL GRUPO------------------------------------------->
-
+    <!-- INTEGRANTES DEL GRUPO -->
     <section class="team section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header text-center text-white pb-5">
-                        <h2>Integrantes del grupo</h2>
-                        <p>
-                            orem ipsum, dolor sit amet consectetur adipisicing elit. <br> Omnis in maiores
-                            modi eum harum velit off
+                        <h2>Integrantes del equipo</h2>
+                        <p class="parrafo-perfil">
+                            Nuestro equipo consta de cuatro integrantes de una gran calidad <br> y profesionalidad
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card text-center bg-dark">
-                        <div class="card-body text-white">
-                            <img src="img/persona.jpg" class="img-fluid rounded-circle" alt="">
-                            <h3 class="card-title py-2">Lorem</h3>
-                            <p class="card-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-                                nullasaepe!
-                            </p>
-                            <p class="socials">
-                                <i class="bi bi-twitter text-white mx-1"></i>
-                                <i class="bi bi-facebook text-white mx-1"></i>
-                                <i class="bi bi-linkedin text-white mx-1"></i>
-                                <i class="bi bi-instagram text-white mx-1"></i>
-                            </p>
+    
+            <div class="container">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                    <div class="col">
+                        <div class="card text-center bg-dark">
+                            <div class="card-body text-white">
+                                <img src="img/persona.jpg" class="img-fluid rounded-circle perfil" alt="">
+                                <h3 class="card-title py-2">Ana</h3>
+                                <p class="card-text">
+                                    Agente inmobiliaria con más de 15 años de experiencia en el mercado.
+                                </p>
+                                <p class="socials">
+                                    <a href="https://www.twitter.com" target="_blank"
+                                        class="bi bi-twitter mx-1"></a>
+                                    <a href="https://www.facebook.com" target="_blank"
+                                        class="bi bi-facebook mx-1"></a>
+                                    <a href="https://www.instagram.com" target="_blank"
+                                        class="bi bi-instagram mx-1"></a>
+                                    <a href="https://www.linkedin.com" target="_blank"
+                                        class="bi bi-linkedin mx-1"></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center bg-dark">
+                            <div class="card-body text-white">
+                                <img src="img/persona2.jpg" class="img-fluid rounded-circle perfil" alt="">
+                                <h3 class="card-title py-2">Alejandro</h3>
+                                <p class="card-text">
+                                    Tiene una sólida reputación en el sector inmobiliario comercial.
+                                </p>
+                                <p class="socials">
+                                    <a href="https://www.twitter.com" target="_blank"
+                                        class="bi bi-twitter mx-1"></a>
+                                    <a href="https://www.facebook.com" target="_blank"
+                                        class="bi bi-facebook mx-1"></a>
+                                    <a href="https://www.instagram.com" target="_blank"
+                                        class="bi bi-instagram mx-1"></a>
+                                    <a href="https://www.linkedin.com" target="_blank"
+                                        class="bi bi-linkedin mx-1"></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center bg-dark">
+                            <div class="card-body text-white">
+                                <img src="img/persona3.png" class="img-fluid rounded-circle perfil" alt="">
+                                <h3 class="card-title py-2">Rubén</h3>
+                                <p class="card-text">
+                                    Conocedor de la zona de Málaga y experto en la venta de propiedades.
+                                </p>
+                                <p class="socials">
+                                    <a href="https://www.twitter.com" target="_blank"
+                                        class="bi bi-twitter mx-1"></a>
+                                    <a href="https://www.facebook.com" target="_blank"
+                                        class="bi bi-facebook mx-1"></a>
+                                    <a href="https://www.instagram.com" target="_blank"
+                                        class="bi bi-instagram mx-1"></a>
+                                    <a href="https://www.linkedin.com" target="_blank"
+                                        class="bi bi-linkedin mx-1"></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center bg-dark">
+                            <div class="card-body text-white">
+                                <img src="img/persona4.png" class="img-fluid rounded-circle perfil" alt="">
+                                <h3 class="card-title py-2">Francisco</h3>
+                                <p class="card-text">
+                                    Experto en finanzas, confiable y profesional, 20 años de experiencia.
+                                </p>
+                                <p class="socials">
+                                    <a href="https://www.twitter.com" target="_blank"
+                                        class="bi bi-twitter mx-1"></a>
+                                    <a href="https://www.facebook.com" target="_blank"
+                                        class="bi bi-facebook mx-1"></a>
+                                    <a href="https://www.instagram.com" target="_blank"
+                                        class="bi bi-instagram mx-1"></a>
+                                    <a href="https://www.linkedin.com" target="_blank"
+                                        class="bi bi-linkedin mx-1"></a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -211,15 +222,13 @@
         </div>
     </section>
 
-     <!---------------------------------------------------------------------------------->
-    <!--------------------------------FOOTER-------------------------------------------------->
-
+    <!-- FOOTER -->
     <footer class="pie-pagina pie-pagina-dark bg-dark mt-5">
         <div class="grupo-1">
             <div class="box">
                 <figure>
                     <a href="#">
-                        <img src="img/logo_footer.png" alt="logo en el que se ve una casa ">
+                        <img src="img/logo_footer.png" alt="logo en el que se ve una casa">
                     </a>
                 </figure>
             </div>
@@ -228,7 +237,6 @@
                         class="bi bi-phone-fill"></i> 952 13 28 42 <br><i class="bi bi-envelope-fill"></i>
                     malagadreamhome@gmail.es</p>
             </div>
-
             <div class="box">
                 <h2>SIGUENOS</h2>
                 <div class="redes-social">
@@ -239,7 +247,6 @@
                 </div>
             </div>
         </div>
-
         <div class="grupo-2">
             <small>
                 &copy;2024 <b>Malaga Dream Home</b> - Todos los derechos reservados -
@@ -247,19 +254,11 @@
         </div>
     </footer>
 
-    <!---------------------------------------------------------------------------------->
-    <!---------------------------------------------------------------------------------->
-
-
     <!-- All Js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-    <!--quitar-->
-
-
 </body>
-
 </html>

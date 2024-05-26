@@ -2,6 +2,37 @@
 
 
     .section-header h2 {
-        margin-top: 20px; /* Ajusta el valor según tus necesidades */
+        margin-top: 20px; 
     }
 
+    #nombre {
+        width: 100vh;
+    }
+    
+    #telefono {
+        width: 50vh;
+    }
+    
+    #correo {
+        width: 50vh; 
+    }
+
+    #invalid-feedback {
+        color: rgb(22, 216, 255);
+    }
+    
+    @media(max-width: 767px) {
+
+        #nombre {
+            width: 100%;
+        }
+
+        #telefono {
+            width: 35vh;
+        }
+        
+        #correo {
+            width: 35vh; 
+        }
+
+    }

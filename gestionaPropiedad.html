@@ -61,53 +61,56 @@
     </nav>
 
 <!-----------------------------------------------DATOS------------------------------------------------------->
-
-
 <section class="contact section-padding">
     <div class="container mt-5 mb-5">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-header text-center text-white pb-5">
-
                     <h2>Gestiona</h2>
-                    
                     <p>Aquí podrá usted contactar de forma directa si desea vender o alquilar su propiedad</p>
-
                 </div>
             </div>
         </div>
         <div class="row m-0">
             <div class="col-md-12 p-0 pt-4 pb-4">
-                <form action="#" class="bg-dark p-4 m-auto">
+                <form action="mailto:tu_correo@ejemplo.com" method="post" enctype="text/plain" class="bg-dark p-4 m-auto" novalidate>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <input type="text" class="fore-control" placeholder="Nombre (obligatorio)" required>
+                                <label for="nombre" class="form-label text-white">Nombre <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="nombre" maxlength="189819" required>
+                                <div class="invalid-feedback">Por favor, ingrese su nombre.</div>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <input type="tel" class="fore-control" placeholder="Telefono (obligatorio)" required>
+                                <label for="telefono" class="form-label text-white">Teléfono <span class="text-danger">*</span></label>
+                                <input type="tel" class="form-control" id="telefono" pattern="\d{9}" maxlength="9" required>
+                                <div class="invalid-feedback">Por favor, ingrese un teléfono válido de 9 dígitos.</div>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <input type="email" class="fore-control" placeholder="Correo (obligatorio)" required>
+                                <label for="correo" class="form-label text-white">Correo <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="correo" maxlength="320" required>
+                                <div class="invalid-feedback">Por favor, ingrese un correo electrónico válido.</div>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <textarea class="form-control" placeholder="Mensaje (obligatorio)" rows="3" required></textarea>
+                                <label for="mensaje" class="form-label text-white">Mensaje <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+                                <div class="invalid-feedback">Por favor, ingrese su mensaje.</div>
                             </div>
                         </div>
-                        <!--mt : margen del top -->
-                        <button class="btn btn-primary btn-lg btn-blovk mt-3" type="submit">Enviar</button>
+                        <button id="submit-btn" class="btn btn-primary btn-lg btn-block mt-3" type="submit">Enviar</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </section>
+
 
  <!---------------------------------------------------------------------------------->
     <!--------------------------------FOOTER-------------------------------------------------->
